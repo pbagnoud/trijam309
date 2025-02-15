@@ -15,12 +15,12 @@ func _process(delta: float) -> void:
 
 
 func _on_option_1_pressed() -> void:
-	pass # Replace with function body.
+	print("option1")
 
 
 func _on_option_2_pressed() -> void:
-	pass # Replace with function body.
+	print("option2")
 
 
 func _on_option_3_pressed() -> void:
-	pass # Replace with function body.
+	print("option3")
