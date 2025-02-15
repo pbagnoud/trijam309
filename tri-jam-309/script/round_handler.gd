@@ -28,6 +28,7 @@ func fin_phase_lancer(score):
 func fin_phase_marchant(array_dice):
 	print(array_dice)
 	current_round = current_round + 1
+	emit_signal('dice_init',current_round + 1,array_dice)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	emit_signal("phase_de")
