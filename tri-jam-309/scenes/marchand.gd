@@ -18,6 +18,9 @@ func _ready() -> void:
 	option1 = options_des[rand_option1]
 	option2 = options_des[rand_option2]
 	option3 = options_des[rand_option3]
+	get_node("Label_Option1").label()
+	get_node("Label_Option2").label()
+	get_node("Label_Option3").label()
 	
 
 

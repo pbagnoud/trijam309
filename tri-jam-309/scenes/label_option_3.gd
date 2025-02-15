@@ -7,10 +7,9 @@ func _ready() -> void:
 	pass
 
 func label():
-	print(parent.option1)
-	var label = parent.option1
+	print(parent.option3)
+	var label = parent.option3
 	text = str(label)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

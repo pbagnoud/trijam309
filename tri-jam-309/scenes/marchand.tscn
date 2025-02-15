@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://by65r22gn4b23"]
+[gd_scene load_steps=6 format=3 uid="uid://by65r22gn4b23"]
 
 [ext_resource type="Script" path="res://scenes/marchand.gd" id="1_2cj2q"]
 [ext_resource type="PackedScene" uid="uid://c1o4h8jt35t6o" path="res://scenes/dice.tscn" id="2_wkq1v"]
 [ext_resource type="Script" path="res://scenes/label_option_1.gd" id="3_l211g"]
+[ext_resource type="Script" path="res://scenes/label_option_2.gd" id="4_dr0ym"]
+[ext_resource type="Script" path="res://scenes/label_option_3.gd" id="5_moo4l"]
 
 [node name="Marchand" type="Node2D"]
 script = ExtResource("1_2cj2q")
@@ -54,7 +56,7 @@ offset_top = 135.0
 offset_right = 350.0
 offset_bottom = 198.0
 theme_override_font_sizes/normal_font_size = 15
-script = ExtResource("3_l211g")
+script = ExtResource("4_dr0ym")
 
 [node name="Label_Option3" type="RichTextLabel" parent="."]
 offset_left = 403.0
@@ -62,7 +64,7 @@ offset_top = 132.0
 offset_right = 521.0
 offset_bottom = 195.0
 theme_override_font_sizes/normal_font_size = 15
-script = ExtResource("3_l211g")
+script = ExtResource("5_moo4l")
 
 [connection signal="pressed" from="Option1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Option2" to="." method="_on_option_2_pressed"]
