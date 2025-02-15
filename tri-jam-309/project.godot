@@ -11,6 +11,12 @@ config_version=5
 [application]
 
 config/name="Tri Jam 309"
-run/main_scene="res://scenes/marchand.tscn"
+
+run/main_scene="res://main.tscn"
+
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://asset/icon.svg"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
