@@ -13,7 +13,9 @@ func product_of_array(array):
 		product *= element
 	return product
 	
-	
+func donne_score_marchant():
+	round_handler.fin_phase_lancer(product_of_array(dice_value))
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
