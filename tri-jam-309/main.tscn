@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://bxef481m03tpn"]
+[gd_scene load_steps=7 format=4 uid="uid://bxef481m03tpn"]
 
 [ext_resource type="Texture2D" uid="uid://mkqcuqvt5mpd" path="res://asset/background.jpg" id="1_kdwso"]
+[ext_resource type="PackedScene" uid="uid://bbatx0v3u8dgg" path="res://scenes/barre_score.tscn" id="2_hgcma"]
 [ext_resource type="PackedScene" uid="uid://bpuyd26ltilhc" path="res://scenes/score.tscn" id="3_4ic3p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcflp"]
@@ -31,3 +32,5 @@ position = Vector2(202, 557)
 shape = SubResource("RectangleShape2D_dft75")
 
 [node name="score" parent="." instance=ExtResource("3_4ic3p")]
+
+[node name="BarreScore" parent="." instance=ExtResource("2_hgcma")]

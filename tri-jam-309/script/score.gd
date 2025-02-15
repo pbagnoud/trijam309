@@ -20,3 +20,7 @@ func on_result(id,result):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	create_array(round_handler.number_of_round + 2)
+
+
+func _on_total_score(_nouveau_score: Variant) -> void:
+	pass # Replace with function body.
