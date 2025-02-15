@@ -1,11 +1,13 @@
 extends Node2D
 
+var id: int
+var faces: Array[int] = [1,2,3,4,5,6] # the faces of the dice
+var current_faces: Array[int] = [1,2,3,4,5,6] # the faces of the dices at the current time
+var rng = RandomNumberGenerator.new() # Create a random number generator
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+	
+func reroll(current_faces):
+	var random_index = rng.randi_range(0, current_faces.size() - 1) # Generate a random index within the array bounds
+	var selected_face = current_faces[random_index] # Retrieve the face at the random index
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	print("Selected face: ", selected_face) # Print the selected face
