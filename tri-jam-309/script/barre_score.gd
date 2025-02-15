@@ -6,7 +6,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	score.connect("total_score", score._on_total_score())
+	#score.connect("total_score", score._on_total_score())
+	pass
 
 func _on_score_total_score(nouveau_score) -> void:
 	score = score.total_score

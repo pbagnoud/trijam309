@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bpkax5krf8jj5"]
+[gd_scene load_steps=11 format=4 uid="uid://bpkax5krf8jj5"]
 
 [ext_resource type="Texture2D" uid="uid://mkqcuqvt5mpd" path="res://asset/background.jpg" id="1_kdwso"]
 [ext_resource type="PackedScene" uid="uid://bpuyd26ltilhc" path="res://scenes/score.tscn" id="3_4ic3p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4omjtkn71yb0" path="res://scenes/round_handler.tscn" id="4_c1hqg"]
 [ext_resource type="PackedScene" uid="uid://by65r22gn4b23" path="res://scenes/marchand.tscn" id="5_1h8pi"]
 [ext_resource type="Script" path="res://button.gd" id="6_17wr4"]
+[ext_resource type="PackedScene" path="res://scenes/barre_score.tscn" id="7_ydoms"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcflp"]
 texture = ExtResource("1_kdwso")
@@ -29,6 +30,7 @@ tile_set = SubResource("TileSet_tblbl")
 [node name="Inventory" type="Node2D" parent="."]
 
 [node name="Zone Dé 1" type="Area2D" parent="Inventory"]
+position = Vector2(-130, 41)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inventory/Zone Dé 1"]
 position = Vector2(202, 557)
@@ -85,6 +87,10 @@ offset_bottom = 298.0
 text = "END "
 script = ExtResource("6_17wr4")
 
+[node name="BarreScore" parent="." instance=ExtResource("7_ydoms")]
+position = Vector2(210, 100)
+
+[connection signal="total_score" from="score" to="BarreScore" method="_on_score_total_score"]
 [connection signal="result" from="Dice1" to="score" method="_on_result"]
 [connection signal="result" from="Dice2" to="score" method="_on_result"]
 [connection signal="result" from="Dice3" to="score" method="_on_result"]
@@ -100,6 +106,12 @@ script = ExtResource("6_17wr4")
 [connection signal="dice_init" from="roundHandler" to="Dice6" method="start_dice"]
 [connection signal="dice_init" from="roundHandler" to="Dice7" method="start_dice"]
 [connection signal="phase_de" from="roundHandler" to="Dice1" method="reroll"]
+[connection signal="phase_de" from="roundHandler" to="Dice2" method="reroll"]
+[connection signal="phase_de" from="roundHandler" to="Dice3" method="reroll"]
+[connection signal="phase_de" from="roundHandler" to="Dice4" method="reroll"]
+[connection signal="phase_de" from="roundHandler" to="Dice5" method="reroll"]
+[connection signal="phase_de" from="roundHandler" to="Dice6" method="reroll"]
+[connection signal="phase_de" from="roundHandler" to="Dice7" method="reroll"]
 [connection signal="phase_marchant" from="roundHandler" to="Marchand" method="make_visible"]
 [connection signal="achat" from="Marchand" to="roundHandler" method="fin_phase_marchant"]
 [connection signal="pressed" from="Button" to="score" method="donne_score_marchant"]
