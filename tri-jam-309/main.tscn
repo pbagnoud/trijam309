@@ -1,11 +1,10 @@
-
-[gd_scene load_steps=7 format=4 uid="uid://bxef481m03tpn"]
-
+[gd_scene load_steps=9 format=4 uid="uid://bpkax5krf8jj5"]
 
 [ext_resource type="Texture2D" uid="uid://mkqcuqvt5mpd" path="res://asset/background.jpg" id="1_kdwso"]
-[ext_resource type="PackedScene" uid="uid://bbatx0v3u8dgg" path="res://scenes/barre_score.tscn" id="2_hgcma"]
 [ext_resource type="PackedScene" uid="uid://bpuyd26ltilhc" path="res://scenes/score.tscn" id="3_4ic3p"]
 [ext_resource type="PackedScene" uid="uid://c1o4h8jt35t6o" path="res://scenes/dice.tscn" id="3_cmd6j"]
+[ext_resource type="PackedScene" uid="uid://b4omjtkn71yb0" path="res://scenes/round_handler.tscn" id="4_c1hqg"]
+[ext_resource type="PackedScene" uid="uid://by65r22gn4b23" path="res://scenes/marchand.tscn" id="5_1h8pi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcflp"]
 texture = ExtResource("1_kdwso")
@@ -34,8 +33,8 @@ tile_set = SubResource("TileSet_tblbl")
 position = Vector2(202, 557)
 shape = SubResource("RectangleShape2D_dft75")
 
-[node name="score" parent="." instance=ExtResource("3_4ic3p")]
-
+[node name="score" parent="." node_paths=PackedStringArray("round_handler") instance=ExtResource("3_4ic3p")]
+round_handler = NodePath("../roundHandler")
 
 [node name="Dice1" parent="." instance=ExtResource("3_cmd6j")]
 position = Vector2(120, 480)
@@ -72,6 +71,11 @@ position = Vector2(1007, 488)
 scale = Vector2(3, 3)
 id = 7
 
+[node name="roundHandler" parent="." instance=ExtResource("4_c1hqg")]
+
+[node name="Marchand" parent="." instance=ExtResource("5_1h8pi")]
+visible = false
+
 [connection signal="result" from="Dice1" to="score" method="_on_result"]
 [connection signal="result" from="Dice2" to="score" method="_on_result"]
 [connection signal="result" from="Dice3" to="score" method="_on_result"]
@@ -79,4 +83,3 @@ id = 7
 [connection signal="result" from="Dice5" to="score" method="_on_result"]
 [connection signal="result" from="Dice6" to="score" method="_on_result"]
 [connection signal="result" from="Dice7" to="score" method="_on_result"]
-
