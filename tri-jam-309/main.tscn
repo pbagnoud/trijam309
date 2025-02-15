@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://bxef481m03tpn"]
+[gd_scene load_steps=6 format=4 uid="uid://bxef481m03tpn"]
 
 [ext_resource type="Texture2D" uid="uid://mkqcuqvt5mpd" path="res://asset/background.jpg" id="1_kdwso"]
-[ext_resource type="Script" path="res://script/barre_score.gd" id="2_ax8jp"]
+[ext_resource type="PackedScene" uid="uid://bpuyd26ltilhc" path="res://scenes/score.tscn" id="3_4ic3p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcflp"]
 texture = ExtResource("1_kdwso")
@@ -13,8 +13,6 @@ sources/1 = SubResource("TileSetAtlasSource_rcflp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dft75"]
 size = Vector2(104.25, 104.5)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qd6m2"]
 
 [node name="Main" type="Node2D"]
 
@@ -32,18 +30,4 @@ tile_set = SubResource("TileSet_tblbl")
 position = Vector2(202, 557)
 shape = SubResource("RectangleShape2D_dft75")
 
-[node name="BarreScore" type="Node2D" parent="."]
-position = Vector2(202, 557)
-script = ExtResource("2_ax8jp")
-score = null
-
-[node name="TextureBarreScore" type="TextureProgressBar" parent="BarreScore"]
-z_index = 2
-material = SubResource("ShaderMaterial_qd6m2")
-offset_left = 865.0
-offset_top = -464.0
-offset_right = 904.0
-offset_bottom = -87.0
-max_value = 1000.0
-fill_mode = 3
-tint_over = Color(1, 0.964706, 0.00784314, 1)
+[node name="score" parent="." instance=ExtResource("3_4ic3p")]
