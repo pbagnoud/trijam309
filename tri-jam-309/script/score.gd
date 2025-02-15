@@ -22,4 +22,4 @@ func _ready() -> void:
 	create_array(round_handler.number_of_round + 2)
 
 func _on_result(value1: Variant, value2: Variant) -> void:
-
+	pass
