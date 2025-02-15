@@ -11,7 +11,7 @@ func _ready():
 	visible = false  # Hide the button initially
 
 
-func reroll(current_faces):
+func reroll():
 	var random_index = rng.randi_range(0, current_faces.size() - 1) # Generate a random index within the array bounds
 	var selected_face = current_faces[random_index] # Retrieve the face at the random index
 	
@@ -22,7 +22,7 @@ func reroll(current_faces):
 	current_faces[random_index] = 0 # change the face of the dice
 
 
-func refresh(current_faces):
+func refresh():
 	current_faces = faces # re-initialize the faces of the dices
 
 
