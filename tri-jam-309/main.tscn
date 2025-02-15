@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://bpkax5krf8jj5"]
+[gd_scene load_steps=10 format=4 uid="uid://bxef481m03tpn"]
 
 [ext_resource type="Texture2D" uid="uid://mkqcuqvt5mpd" path="res://asset/background.jpg" id="1_kdwso"]
+[ext_resource type="PackedScene" uid="uid://bbatx0v3u8dgg" path="res://scenes/barre_score.tscn" id="2_hgcma"]
 [ext_resource type="PackedScene" uid="uid://bpuyd26ltilhc" path="res://scenes/score.tscn" id="3_4ic3p"]
 [ext_resource type="PackedScene" uid="uid://c1o4h8jt35t6o" path="res://scenes/dice.tscn" id="3_cmd6j"]
 [ext_resource type="PackedScene" uid="uid://b4omjtkn71yb0" path="res://scenes/round_handler.tscn" id="4_c1hqg"]
@@ -75,6 +76,11 @@ id = 7
 
 [node name="Marchand" parent="." instance=ExtResource("5_1h8pi")]
 visible = false
+
+[node name="BarreScore" parent="." instance=ExtResource("2_hgcma")]
+modulate = Color(1, 0.980392, 1, 1)
+position = Vector2(-274, 544)
+score = NodePath("")
 
 [connection signal="result" from="Dice1" to="score" method="_on_result"]
 [connection signal="result" from="Dice2" to="score" method="_on_result"]
