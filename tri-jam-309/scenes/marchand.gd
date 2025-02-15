@@ -2,7 +2,9 @@ extends Node2D
 
 signal achat(de)
 
-var options_des = [[1,2,3,4,5,6], [1,1,1,2,2,2]]
+var des_basiques = [[1,1,1,2,2,2], [2,2,2,1,1,1]]
+var des_styles = [[1,2,3,4,5,6], [2,2,2,3,3,3]]
+var options_des = des_basiques
 
 var option1 = [1,2,3,4,5,6]
 var option2 = [1,2,3,4,5,6]
@@ -12,6 +14,21 @@ var option3 = [1,2,3,4,5,6]
 var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	nouvel_achat(1)
+	
+func make_visible() :
+	visible = true
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func nouvel_achat(score):
+	if score < 50 :
+		options_des = des_basiques
+	else :
+		options_des = des_styles
 	var rand_option1 = rng.randi_range(0, len(options_des)-1)
 	var rand_option2 = rng.randi_range(0, len(options_des)-1)
 	var rand_option3 = rng.randi_range(0, len(options_des)-1)
@@ -21,13 +38,6 @@ func _ready() -> void:
 	get_node("Label_Option1").label()
 	get_node("Label_Option2").label()
 	get_node("Label_Option3").label()
-	
-func make_visible() :
-	visible = true
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_option_1_pressed() -> void:
