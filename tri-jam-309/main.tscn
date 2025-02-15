@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://bxef481m03tpn"]
+[gd_scene load_steps=7 format=4 uid="uid://bpkax5krf8jj5"]
 
 [ext_resource type="Texture2D" uid="uid://mkqcuqvt5mpd" path="res://asset/background.jpg" id="1_kdwso"]
-[ext_resource type="Script" path="res://script/barre_score.gd" id="2_ax8jp"]
+[ext_resource type="PackedScene" uid="uid://bpuyd26ltilhc" path="res://scenes/score.tscn" id="3_4ic3p"]
+[ext_resource type="PackedScene" uid="uid://c1o4h8jt35t6o" path="res://scenes/dice.tscn" id="3_cmd6j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcflp"]
 texture = ExtResource("1_kdwso")
@@ -13,8 +14,6 @@ sources/1 = SubResource("TileSetAtlasSource_rcflp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dft75"]
 size = Vector2(104.25, 104.5)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qd6m2"]
 
 [node name="Main" type="Node2D"]
 
@@ -32,18 +31,47 @@ tile_set = SubResource("TileSet_tblbl")
 position = Vector2(202, 557)
 shape = SubResource("RectangleShape2D_dft75")
 
-[node name="BarreScore" type="Node2D" parent="."]
-position = Vector2(202, 557)
-script = ExtResource("2_ax8jp")
-score = null
+[node name="score" parent="." instance=ExtResource("3_4ic3p")]
 
-[node name="TextureBarreScore" type="TextureProgressBar" parent="BarreScore"]
-z_index = 2
-material = SubResource("ShaderMaterial_qd6m2")
-offset_left = 865.0
-offset_top = -464.0
-offset_right = 904.0
-offset_bottom = -87.0
-max_value = 1000.0
-fill_mode = 3
-tint_over = Color(1, 0.964706, 0.00784314, 1)
+[node name="Dice1" parent="." instance=ExtResource("3_cmd6j")]
+position = Vector2(120, 480)
+scale = Vector2(3, 3)
+id = 1
+
+[node name="Dice2" parent="." instance=ExtResource("3_cmd6j")]
+position = Vector2(267, 488)
+scale = Vector2(3, 3)
+id = 2
+
+[node name="Dice3" parent="." instance=ExtResource("3_cmd6j")]
+position = Vector2(400, 495)
+scale = Vector2(3, 3)
+id = 3
+
+[node name="Dice4" parent="." instance=ExtResource("3_cmd6j")]
+position = Vector2(539, 488)
+scale = Vector2(3, 3)
+id = 4
+
+[node name="Dice5" parent="." instance=ExtResource("3_cmd6j")]
+position = Vector2(689, 485)
+scale = Vector2(3, 3)
+id = 5
+
+[node name="Dice6" parent="." instance=ExtResource("3_cmd6j")]
+position = Vector2(847, 487)
+scale = Vector2(3, 3)
+id = 6
+
+[node name="Dice7" parent="." instance=ExtResource("3_cmd6j")]
+position = Vector2(1007, 488)
+scale = Vector2(3, 3)
+id = 7
+
+[connection signal="result" from="Dice1" to="score" method="_on_result"]
+[connection signal="result" from="Dice2" to="score" method="_on_result"]
+[connection signal="result" from="Dice3" to="score" method="_on_result"]
+[connection signal="result" from="Dice4" to="score" method="_on_result"]
+[connection signal="result" from="Dice5" to="score" method="_on_result"]
+[connection signal="result" from="Dice6" to="score" method="_on_result"]
+[connection signal="result" from="Dice7" to="score" method="_on_result"]

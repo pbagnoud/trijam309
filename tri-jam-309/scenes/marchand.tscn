@@ -1,35 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://by65r22gn4b23"]
+[gd_scene load_steps=6 format=3 uid="uid://by65r22gn4b23"]
 
 [ext_resource type="Script" path="res://scenes/marchand.gd" id="1_2cj2q"]
 [ext_resource type="PackedScene" uid="uid://c1o4h8jt35t6o" path="res://scenes/dice.tscn" id="2_wkq1v"]
+[ext_resource type="Script" path="res://scenes/label_option_1.gd" id="3_l211g"]
+[ext_resource type="Script" path="res://scenes/label_option_2.gd" id="4_dr0ym"]
+[ext_resource type="Script" path="res://scenes/label_option_3.gd" id="5_moo4l"]
 
 [node name="Marchand" type="Node2D"]
 script = ExtResource("1_2cj2q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 358.0
-offset_bottom = 173.0
+offset_right = 606.0
+offset_bottom = 355.0
 color = Color(0.77084, 0.770839, 0.770839, 1)
 
 [node name="Option1" type="Button" parent="."]
-offset_left = 236.0
-offset_top = 85.0
-offset_right = 305.0
-offset_bottom = 116.0
+offset_left = 54.0
+offset_top = 221.0
+offset_right = 187.0
+offset_bottom = 289.0
 text = "Acheter"
 
 [node name="Option2" type="Button" parent="."]
-offset_left = 134.0
-offset_top = 85.0
-offset_right = 203.0
-offset_bottom = 116.0
+offset_left = 225.0
+offset_top = 221.0
+offset_right = 355.0
+offset_bottom = 288.0
 text = "Acheter"
 
 [node name="Option3" type="Button" parent="."]
-offset_left = 24.0
-offset_top = 86.0
-offset_right = 93.0
-offset_bottom = 117.0
+offset_left = 395.0
+offset_top = 222.0
+offset_right = 537.0
+offset_bottom = 289.0
 text = "Acheter
 "
 
@@ -38,6 +41,30 @@ text = "Acheter
 [node name="Dice2" parent="." instance=ExtResource("2_wkq1v")]
 
 [node name="Dice3" parent="." instance=ExtResource("2_wkq1v")]
+
+[node name="Label_Option1" type="RichTextLabel" parent="."]
+offset_left = 64.0
+offset_top = 136.0
+offset_right = 182.0
+offset_bottom = 199.0
+theme_override_font_sizes/normal_font_size = 15
+script = ExtResource("3_l211g")
+
+[node name="Label_Option2" type="RichTextLabel" parent="."]
+offset_left = 232.0
+offset_top = 135.0
+offset_right = 350.0
+offset_bottom = 198.0
+theme_override_font_sizes/normal_font_size = 15
+script = ExtResource("4_dr0ym")
+
+[node name="Label_Option3" type="RichTextLabel" parent="."]
+offset_left = 403.0
+offset_top = 132.0
+offset_right = 521.0
+offset_bottom = 195.0
+theme_override_font_sizes/normal_font_size = 15
+script = ExtResource("5_moo4l")
 
 [connection signal="pressed" from="Option1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Option2" to="." method="_on_option_2_pressed"]
