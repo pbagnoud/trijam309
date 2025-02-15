@@ -4,3 +4,5 @@
 
 [node name="score" type="Node"]
 script = ExtResource("1_dutbj")
+
+[connection signal="total_score" from="." to="." method="_on_total_score"]
