@@ -13,9 +13,7 @@ func product_of_array(array):
 		product *= element
 	return product
 	
-func on_result(id,result):
-	dice_value[id]=result
-	emit_signal('total_score',product_of_array(result))
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,4 +21,5 @@ func _ready() -> void:
 
 
 func _on_result(value1: Variant, value2: Variant) -> void:
-	pass
+	dice_value[value1]=value2
+	emit_signal('total_score',product_of_array(value2))
