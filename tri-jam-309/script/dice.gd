@@ -17,9 +17,9 @@ func reroll(current_faces):
 	
 	print("Selected face: ", selected_face) # Print the selected face
 	
-	result.emit(id, selected_face)
+	result.emit(id, selected_face) # emit the signal result
 	
-	current_faces[random_index] = 0
+	current_faces[random_index] = 0 # change the face of the dice
 
 
 func refresh(current_faces):
