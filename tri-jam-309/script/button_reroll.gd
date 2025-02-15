@@ -6,7 +6,7 @@ func _ready():
 	visible = false  # Hide the button initially
 
 
-func input(event):
+func _input(event):
 	
 	if event is InputEventMouseMotion:
 		# Get the position of the mouse relative to the die asset
