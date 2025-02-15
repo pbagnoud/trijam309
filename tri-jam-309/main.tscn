@@ -35,8 +35,9 @@ shape = SubResource("RectangleShape2D_dft75")
 [node name="BarreScore" type="Node2D" parent="."]
 position = Vector2(202, 557)
 script = ExtResource("2_ax8jp")
+score = null
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="BarreScore"]
+[node name="TextureBarreScore" type="TextureProgressBar" parent="BarreScore"]
 z_index = 2
 material = SubResource("ShaderMaterial_qd6m2")
 offset_left = 865.0
