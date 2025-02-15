@@ -7,7 +7,6 @@
 [node name="BarreScore" type="Node2D"]
 position = Vector2(202, 557)
 script = ExtResource("1_vdtdy")
-score = null
 
 [node name="TextureBarreScore" type="TextureProgressBar" parent="."]
 z_index = 2
