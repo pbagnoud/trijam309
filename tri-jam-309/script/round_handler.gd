@@ -1,6 +1,8 @@
 extends Node
 signal phase_marchant
 signal phase_de
+signal dice_init(id,faces)
+
 @export var marchant: Node
 @export var number_of_round = 5
 @export  var current_round = 1:
@@ -29,3 +31,5 @@ func fin_phase_marchant(array_dice):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	emit_signal("phase_de")
+	emit_signal('dice_init',1,[1,2,3,4,5,6])
+	emit_signal('dice_init',2,[1,2,3,4,5,6])
