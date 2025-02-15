@@ -11,8 +11,8 @@ script = ExtResource("1_j7e6t")
 texture = ExtResource("2_eem4y")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -19.0
-offset_top = 33.0
-offset_right = 14.0
-offset_bottom = 41.0
+offset_left = -17.0
+offset_top = 26.0
+offset_right = 18.0
+offset_bottom = 34.0
 script = ExtResource("3_c1cuv")

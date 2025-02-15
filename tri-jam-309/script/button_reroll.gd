@@ -6,19 +6,24 @@ func _ready():
 	visible = false  # Hide the button initially
 
 
-func input(event):
+func _input(event):
 	
 	if event is InputEventMouseMotion:
 		# Get the position of the mouse relative to the die asset
 		var mouse_pos = event.position
+		# Get the global position and size of the dice
+		var dice_global_position = dice.global_position
+		var dice_size = dice.get_node("Sprite2D").texture.get_size() 
 		
-		# Check if the mouse is over the die (assuming the die is at position (0, 0))
-		if dice.get_global_rect().has_point(mouse_pos):
-			visible = true  # Show the button
-			position = mouse_pos + Vector2(0, 20)  # Position it below the die
+		# Create a rectangle representing the dice bounds
+		var dice_rect = Rect2(dice_global_position - (dice_size / 2), dice_size)  # Centering around global position
+		
+		if dice_rect.has_point(mouse_pos):
+			visible = true
+			position = mouse_pos + Vector2(0, 20)
 		else:
-			visible = false  # Hide the button if not hovering
-
+			visible = false
+		
 	elif event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and visible:
 			dice.reroll(dice.current_faces)  # Call your function when clicking on the button
