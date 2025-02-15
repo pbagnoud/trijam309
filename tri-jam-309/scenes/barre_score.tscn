@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbatx0v3u8dgg"]
+
+[ext_resource type="Script" path="res://script/barre_score.gd" id="1_vdtdy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qd6m2"]
+
+[node name="BarreScore" type="Node2D"]
+position = Vector2(202, 557)
+script = ExtResource("1_vdtdy")
+score = null
+
+[node name="TextureBarreScore" type="TextureProgressBar" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_qd6m2")
+offset_left = 865.0
+offset_top = -464.0
+offset_right = 904.0
+offset_bottom = -87.0
+max_value = 1000.0
+fill_mode = 3
+tint_over = Color(1, 0.964706, 0.00784314, 1)
