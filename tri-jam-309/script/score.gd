@@ -24,4 +24,3 @@ func _ready() -> void:
 
 func _on_result(value1: Variant, value2: Variant) -> void:
 	pass
-
