@@ -26,6 +26,7 @@ func refresh():
 	current_faces = faces # re-initialize the faces of the dices
 
 
-func start_dice(valeurs):
-	faces = valeurs
-	visible = true
+func start_dice(current_id, valeurs):
+	if current_id == id:
+		faces = valeurs
+		visible = true
