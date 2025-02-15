@@ -1,3 +1,52 @@
-[gd_scene format=3 uid="uid://by65r22gn4b23"]
+[gd_scene load_steps=3 format=3 uid="uid://by65r22gn4b23"]
+
+[ext_resource type="Script" path="res://scenes/window_marchand.gd" id="1_plkh8"]
+[ext_resource type="PackedScene" uid="uid://c1o4h8jt35t6o" path="res://scenes/dice.tscn" id="2_wkq1v"]
 
 [node name="Marchand" type="Node2D"]
+
+[node name="window_marchand" type="Window" parent="."]
+position = Vector2i(0, 36)
+size = Vector2i(500, 300)
+visible = false
+script = ExtResource("1_plkh8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 358.0
+offset_bottom = 173.0
+color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[node name="Option1" type="Button" parent="."]
+offset_left = 236.0
+offset_top = 85.0
+offset_right = 305.0
+offset_bottom = 116.0
+text = "Acheter"
+
+[node name="Sprite2D" type="Sprite2D" parent="Option1"]
+
+[node name="Option2" type="Button" parent="."]
+offset_left = 134.0
+offset_top = 85.0
+offset_right = 203.0
+offset_bottom = 116.0
+text = "Acheter"
+
+[node name="Option3" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 86.0
+offset_right = 93.0
+offset_bottom = 117.0
+text = "Acheter
+"
+
+[node name="Dice" parent="." instance=ExtResource("2_wkq1v")]
+
+[node name="Dice2" parent="." instance=ExtResource("2_wkq1v")]
+
+[node name="Dice3" parent="." instance=ExtResource("2_wkq1v")]
+
+[connection signal="close_requested" from="window_marchand" to="window_marchand" method="_on_close_requested"]
+[connection signal="pressed" from="Option1" to="window_marchand" method="_on_option_1_pressed"]
+[connection signal="pressed" from="Option2" to="window_marchand" method="_on_option_2_pressed"]
+[connection signal="pressed" from="Option3" to="window_marchand" method="_on_option_3_pressed"]
