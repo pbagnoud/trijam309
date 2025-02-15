@@ -5,16 +5,15 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qd6m2"]
 
 [node name="BarreScore" type="Node2D"]
-position = Vector2(202, 557)
+position = Vector2(-301, 557)
 script = ExtResource("1_vdtdy")
 
-[node name="TextureBarreScore" type="TextureProgressBar" parent="."]
-z_index = 2
+[node name="TextureBarreScore" type="ProgressBar" parent="."]
+z_index = 10
 material = SubResource("ShaderMaterial_qd6m2")
-offset_left = 865.0
-offset_top = -464.0
-offset_right = 904.0
-offset_bottom = -87.0
+offset_left = 1352.0
+offset_top = -471.0
+offset_right = 1391.0
+offset_bottom = -220.0
 max_value = 1000.0
 fill_mode = 3
-tint_over = Color(1, 0.964706, 0.00784314, 1)

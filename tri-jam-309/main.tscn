@@ -1,6 +1,8 @@
 [gd_scene load_steps=11 format=4 uid="uid://bpkax5krf8jj5"]
 
+
 [ext_resource type="Texture2D" uid="uid://mkqcuqvt5mpd" path="res://asset/background.jpg" id="1_kdwso"]
+[ext_resource type="PackedScene" uid="uid://bbatx0v3u8dgg" path="res://scenes/barre_score.tscn" id="2_hgcma"]
 [ext_resource type="PackedScene" uid="uid://bpuyd26ltilhc" path="res://scenes/score.tscn" id="3_4ic3p"]
 [ext_resource type="PackedScene" uid="uid://c1o4h8jt35t6o" path="res://scenes/dice.tscn" id="3_cmd6j"]
 [ext_resource type="PackedScene" uid="uid://b4omjtkn71yb0" path="res://scenes/round_handler.tscn" id="4_c1hqg"]
