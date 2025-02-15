@@ -24,6 +24,6 @@ func _ready() -> void:
 
 func _on_result(value1: Variant, value2: Variant) -> void:
 	dice_value[value1-1]=value2
-	emit_signal('total_score',product_of_array(value2))
-func _on_total_score(nouveau_score):
-	pass
+	print('score :')
+	print(dice_value)
+	emit_signal('total_score',product_of_array(dice_value))
