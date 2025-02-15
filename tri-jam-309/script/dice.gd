@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var id: int
-var faces: Array[int] = [1,2,3,4,5,6] # the faces of the dice
-var current_faces: Array[int] = [1,2,3,4,5,6] # the faces of the dices at the current time
+var faces: Array = [1,2,3,4,5,6] # the faces of the dice
+var current_faces: Array = [1,2,3,4,5,6] # the faces of the dices at the current time
 var rng = RandomNumberGenerator.new() # Create a random number generator
 signal result(value1, value2) # value1 = id, value2 = result of the function reroll
 

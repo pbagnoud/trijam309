@@ -83,3 +83,5 @@ visible = false
 [connection signal="result" from="Dice5" to="score" method="_on_result"]
 [connection signal="result" from="Dice6" to="score" method="_on_result"]
 [connection signal="result" from="Dice7" to="score" method="_on_result"]
+[connection signal="dice_init" from="roundHandler" to="Dice1" method="start_dice"]
+[connection signal="dice_init" from="roundHandler" to="Dice2" method="start_dice"]
