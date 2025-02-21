@@ -16,4 +16,6 @@ offset_top = -471.0
 offset_right = 1391.0
 offset_bottom = -220.0
 max_value = 1000.0
+value = 1.0
 fill_mode = 3
+show_percentage = false
